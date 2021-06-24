@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo } from 'react'
+import React, { memo, useEffect, useRef } from 'react'
 import { Animated, Dimensions, Image, StyleProp, View, ViewStyle } from 'react-native'
 
 import { skeletonSprite } from '../../assets'
@@ -14,7 +14,7 @@ interface SkeletonProps {
 const { width: screenWidth } = Dimensions.get('window')
 
 const Skeleton = memo<SkeletonProps>(({ width = '50%', height = '100%', style }) => {
-  const animatedValue = useMemo(() => new Animated.Value(0), [])
+  const animatedValue = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
     Animated.loop(

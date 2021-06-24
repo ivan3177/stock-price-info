@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useCallback, useEffect, useMemo, useRef } from 'react'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, Text, TouchableOpacity } from 'react-native'
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 import { RouteProp } from '@react-navigation/native'
 
@@ -50,8 +50,15 @@ const StocksScreen: FunctionComponent<StocksScreenProps> = ({ navigation }) => {
     []
   )
 
+  const goToAbout = useCallback(() => {
+    navigation.jumpTo('About', {})
+  }, [])
+
   return (
     <SafeAreaView style={styles.container}>
+      <TouchableOpacity style={styles.button} onPress={goToAbout}>
+        <Text style={styles.buttonText}>About app</Text>
+      </TouchableOpacity>
       <StocksTable stocksStore={stocksStore} />
     </SafeAreaView>
   )

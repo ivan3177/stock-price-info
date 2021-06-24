@@ -7,25 +7,21 @@ import styles from './styles'
 
 interface StockTableRowSkeletonProps {}
 
-const StockTableRowSkeleton = memo<StockTableRowSkeletonProps>(({}) => {
-  useEffect(() => {}, [])
-
-  return (
-    <View style={styles.container}>
-      <View style={styles.cell}>
-        <Skeleton height={12} />
-      </View>
-      <View style={styles.cell}>
-        <Skeleton height={12} />
-      </View>
-      <View style={styles.cell}>
-        <Skeleton height={12} />
-      </View>
-      <View style={styles.cell}>
-        <Skeleton height={12} />
-      </View>
+const StockTableRowSkeleton = memo<StockTableRowSkeletonProps>(({}) => (
+  <View style={styles.container}>
+    <View style={styles.cell}>
+      <Skeleton height={12} />
     </View>
-  )
-})
+    <View style={styles.cell}>
+      <Skeleton height={12} />
+    </View>
+    <View style={styles.cell}>
+      <Skeleton height={12} />
+    </View>
+    <View style={styles.cell}>
+      <Skeleton height={12} />
+    </View>
+  </View>
+))
 
 export default StockTableRowSkeleton
