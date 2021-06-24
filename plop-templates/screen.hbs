@@ -1,0 +1,19 @@
+import React, { FunctionComponent, useEffect } from 'react'
+import { View } from 'react-native'
+
+import { TabNavigatorParamList } from '../navigation'
+
+import styles from './styles'
+
+type {{name}}ScreenNavigationProp = StackNavigationProp<TabNavigatorParamList, '{{name}}'>
+type {{name}}ScreenRouteProp = RouteProp<TabNavigatorParamList, '{{name}}'>;
+
+interface {{name}}ScreenProps {}
+
+const {{name}}Screen: FunctionComponent<{{name}}ScreenProps> = ({}) => {
+  useEffect(() => {}, [])
+
+  return <View style={styles.container} />
+}
+
+export default {{name}}
