@@ -1,14 +1,29 @@
-import React, { memo, useEffect } from 'react'
-import { View } from 'react-native'
+import React, { FunctionComponent, useEffect } from 'react'
+import { SafeAreaView } from 'react-native'
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
+import { RouteProp } from '@react-navigation/native'
+
+import { TabNavigatorParamList } from '../../navigation'
+import { StocksTable } from '../../components'
 
 import styles from './styles'
 
-interface StocksProps {}
+type StocksScreenNavigationProp = BottomTabNavigationProp<TabNavigatorParamList, 'Stocks'>
+type StocksScreenRouteProp = RouteProp<TabNavigatorParamList, 'Stocks'>
 
-const Stocks = memo<StocksProps>(({}) => {
+interface StocksScreenProps {
+  navigation: StocksScreenNavigationProp
+  route: StocksScreenRouteProp
+}
+
+const StocksScreen: FunctionComponent<StocksScreenProps> = ({}) => {
   useEffect(() => {}, [])
 
-  return <View style={styles.container} />
-})
+  return (
+    <SafeAreaView style={styles.container}>
+      <StocksTable />
+    </SafeAreaView>
+  )
+}
 
-export default Stocks
+export default StocksScreen

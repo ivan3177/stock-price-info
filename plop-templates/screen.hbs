@@ -1,14 +1,19 @@
 import React, { FunctionComponent, useEffect } from 'react'
 import { View } from 'react-native'
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
+import { RouteProp } from '@react-navigation/native'
 
-import { TabNavigatorParamList } from '../navigation'
+import { TabNavigatorParamList } from '../../navigation'
 
 import styles from './styles'
 
-type {{name}}ScreenNavigationProp = StackNavigationProp<TabNavigatorParamList, '{{name}}'>
+type {{name}}ScreenNavigationProp = BottomTabNavigationProp<TabNavigatorParamList, '{{name}}'>
 type {{name}}ScreenRouteProp = RouteProp<TabNavigatorParamList, '{{name}}'>;
 
-interface {{name}}ScreenProps {}
+interface {{name}}ScreenProps {
+  navigation: {{name}}ScreenNavigationProp
+  route: {{name}}ScreenRouteProp
+}
 
 const {{name}}Screen: FunctionComponent<{{name}}ScreenProps> = ({}) => {
   useEffect(() => {}, [])
@@ -16,4 +21,4 @@ const {{name}}Screen: FunctionComponent<{{name}}ScreenProps> = ({}) => {
   return <View style={styles.container} />
 }
 
-export default {{name}}
+export default {{name}}Screen

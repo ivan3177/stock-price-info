@@ -13,8 +13,4 @@ export default StyleSheet.create({
     borderWidth: 1,
     padding: 8,
   },
-
-  cellData: {
-    fontSize: 12,
-  },
 })

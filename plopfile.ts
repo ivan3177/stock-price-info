@@ -48,7 +48,7 @@ export default function (plop: NodePlopAPI) {
     actions: [
       {
         type: 'add',
-        templateFile: 'plop-templates/component.hbs',
+        templateFile: 'plop-templates/screen.hbs',
         path: 'src/screens/{{name}}Screen/{{name}}Screen.tsx',
       },
       {

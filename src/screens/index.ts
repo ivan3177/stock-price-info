@@ -1,2 +1,2 @@
-export * from './AboutScreen'
 export * from './StocksScreen'
+export * from './AboutScreen'
